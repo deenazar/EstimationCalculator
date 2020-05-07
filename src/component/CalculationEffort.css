@@ -1,0 +1,27 @@
+.button {
+    width: 52.4vw;
+    /* background: #F64c72; */
+    margin: 0 auto;
+    text-align: right;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  .button input[type="button"] {
+    background: #F64c72;
+    border: 0;
+    padding: 8px 25px;
+    font-size: 15px;
+    letter-spacing: 2px;
+
+  }
+
+  .calHeading {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    width: 52.4vw;
+    margin: 0 auto;
+    text-align: center;
+    padding: 35px;
+}
