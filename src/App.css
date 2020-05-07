@@ -43,7 +43,8 @@ div#root hr {
   font-size: 15px;
   letter-spacing: 2px;
   margin-left: 20px;
-  border-radius: 5px
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 h1 {
