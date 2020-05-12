@@ -10,44 +10,260 @@ import EffortCalculate from './component/CalculationEffort.js';
 
 const steps = [{ title: 'Essential effort' }, { title: 'Add-Ons' }, { title: 'Show Effort' },]
 
+var essentialLoadData = [
+    {
+        Heading: "Essential",
+        mainTitle: 'Header',
+        detail: [
+            {
+                find: 'H1',
+                type: 'radio',
+                value: 2,
+                name: "Header",
+                checked: false
+            },
+            {
+                find: 'H2',
+                type: 'radio',
+                value: 4,
+                name: "Header",
+                checked: false
+            },
+            {
+                find: 'H3',
+                type: 'radio',
+                value: 6,
+                name: "Header",
+                checked: false
+            }
+        ]
+
+    },
+    {
+        Heading: "Essential",
+        mainTitle: 'Videos',
+        detail: [
+            {
+                find: 'V1',
+                type: 'radio',
+                value: 2,
+                name: "Videos",
+                checked: false
+            },
+            {
+                find: 'V2',
+                type: 'radio',
+                value: 4,
+                name: "Videos",
+                checked: false
+            },
+            {
+                find: 'V3',
+                type: 'radio',
+                value: 6,
+                name: "Videos",
+                checked: false
+            }
+        ]
+
+    },
+    {
+        Heading: "Essential",
+        mainTitle: 'Photos',
+        detail: [
+            {
+                find: 'P1',
+                type: 'radio',
+                value: 2,
+                name: "Photos",
+                checked: false
+            },
+            {
+                find: 'P2',
+                type: 'radio',
+                value: 4,
+                name: "Photos",
+                checked: false
+            },
+            {
+                find: 'P3',
+                type: 'radio',
+                value: 6,
+                name: "Photos",
+                checked: false
+            }
+        ]
+
+    }
+
+]
+
+var addOnsLoadData = [
+    {
+        Heading: "AddOns",
+        mainTitle: 'Toaster',
+        detail: [
+            {
+                find: 'T1',
+                type: 'checkbox',
+                name:"Toaster",
+                value: 2,
+                checked: false
+            }
+        ]
+
+    },
+    {
+        Heading: "AddOns",
+        mainTitle: 'LightBox',
+        detail: [
+            {
+                find: 'L1',
+                type: 'checkbox',
+                name:"LightBox",
+                value: 4,
+                checked: false
+            }
+        ]
+
+    },
+    {
+        Heading: "AddOns",
+        mainTitle: 'Whatever',
+        detail: [
+            {
+                find: 'W1',
+                type: 'checkbox',
+                value: 6,
+                name:"Whatever",
+                checked: false
+            }
+        ]
+
+    },
+]
+
+var calculationLoadData = [];
+var effort = 0;
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             activeStep: 1,
-            totalEffort: 0,
-            videoScore: 0,
-            headerScore: 0,
-            photoScore: 0,
-            lightbox: 0,
-            toaster: 0,
-            whatever: 0,
-            addOnsEffort: 0,
-            calculateStatus: false
+            essentialOriginalData: essentialLoadData,
+            addOnsOriginalData: addOnsLoadData,
+            calculationEffortData: calculationLoadData,
+            totalEffort: 0
         }
     }
 
-    InitialEffortSet = () =>{
-        if(this.state.activeStep===1){
-            this.setState({totalEffort:0, headerScore:0, photoScore:0, videoScore:0})
+    InitialEffortSet = () => {
+        if (this.state.activeStep === 1) {
+            this.setState({ totalEffort: 0, headerScore: 0, photoScore: 0, videoScore: 0 })
         }
-        else if(this.state.activeStep === 2){
-            this.setState({addOnsEffort:0, toaster:0, lightbox:0, whatever:0})
+        else if (this.state.activeStep === 2) {
+            this.setState({ addOnsEffort: 0, toaster: 0, lightbox: 0, whatever: 0 })
+        }
+        else if (this.state.activeStep === steps.length) {
+            this.TotalEffortCalculation(4);
         }
     }
 
     handleOnClickStepper = (step) => {
+        console.log("adi", step);
+        if(step == steps.length){
+            this.TotalEffortCalculation(steps.length, step)
+        }
+        else{
+            this.setState({ activeStep: step }, () => {
+                this.InitialEffortSet();
+            });
+        }
         
-        this.setState({ activeStep: step }, ()=>{
-            this.InitialEffortSet();
-        });
+
+    }
+
+    TotalEffortCalculation = (length, step) => {
+
+        let effort = 0
+        console.log("steps", step, length);
+        if (step == length) {
+            
+            console.log("datas", this.state.essentialOriginalData, this.state.addOnsOriginalData);
+            this.state.essentialOriginalData.map((temp) =>
+                temp.detail.map((subTemp) => {
+                    if (subTemp.checked) {
+                        calculationLoadData.push(subTemp);
+                        effort = effort + subTemp.value;
+                    }
+                })
+            )
+
+            this.state.addOnsOriginalData.map((temp) =>
+                temp.detail.map((subTemp) => {
+                    if (subTemp.checked) {
+                        calculationLoadData.push(subTemp);
+                        effort = effort + subTemp.value;
+                    }
+                })
+            )
+        }
+
+        this.setState({
+            calculationEffortData: calculationLoadData, totalEffort: effort , activeStep: step
+        }, console.log("Calculation Data", this.state.calculationEffortData, this.state.totalEffort));
+
         
+
+    }
+
+    EstimationCalculation = (e) => {
+        console.log("name", e.target.name);
+
+        calculationLoadData = [];
+
+        essentialLoadData.map((data) =>
+            data.detail.map((subdata) => {
+                if (subdata.find === e.target.id) {
+                    subdata.checked = e.target.checked;
+                }
+                else {
+                    console.log("event", subdata.name);
+                    subdata.checked =  false;
+                }
+            }
+            )
+        );
+
+        this.setState({
+            essentialOriginalData: essentialLoadData
+        })
+
+    }
+
+    AddOnsCalculation = (e) => {
+        console.log(e.target.checked)
+        calculationLoadData = [];
+
+
+        addOnsLoadData.map((data) =>
+            data.detail.map((subdata) => {
+                subdata.checked = subdata.find === e.target.id ? e.target.checked : subdata.checked;
+            }
+            )
+        );
+
+        this.setState({
+            addOnsOriginalData: addOnsLoadData
+        })
+
     }
 
     handleOnClickNext = () => {
         let nextStep = this.state.activeStep + 1;
-        this.setState({ activeStep: nextStep })
+        this.TotalEffortCalculation(steps.length, nextStep);
     }
 
     handleOnClickBack = () => {
@@ -60,36 +276,7 @@ export default class App extends React.Component {
         this.setState({ activeStep: nextStep })
     }
 
-    EstimationCalculation = (e) => {
-        this.setState({
-            headerScore: e.target.name === "header" && (e.target.name !== "video" || e.target.name !== "photo") ? e.target.checked ? this.state.headerScore + parseInt(e.target.value) : this.state.headerScore - parseInt(e.target.value) : this.state.headerScore,
-            videoScore: e.target.name === "video" && (e.target.name !== "header" || e.target.name !== "photo") ? e.target.checked ? this.state.videoScore + parseInt(e.target.value) : this.state.videoScore - parseInt(e.target.value) : this.state.videoScore,
-            photoScore: e.target.name === "photo" && (e.target.name !== "header" || e.target.name !== "video") ? e.target.checked ? this.state.photoScore + parseInt(e.target.value) : this.state.photoScore - parseInt(e.target.value) : this.state.photoScore,
-        }, () => {
-            this.calculationEffort(this.state);
-        });
-
-    }
-
-    AddOnsCalculation = (e) => {
-        console.log(e.target.checked);
-
-        //     this.setState({
-        //     lightbox: e.target.name === "lightbox" ? e.target.checked ? this.state.addOnsEffort + parseInt(e.target.value) : this.state.addOnsEffort - parseInt(e.target.value) : this.state.lightbox,
-        //     toaster: e.target.name === "toaster" ? e.target.checked ? this.state.addOnsEffort + parseInt(e.target.value) : this.state.addOnsEffort - parseInt(e.target.value) : this.state.toaster,
-        //     whatever: e.target.name === "whatever" ? e.target.checked ? this.state.addOnsEffort + parseInt(e.target.value) : this.state.addOnsEffort - parseInt(e.target.value) : this.state.whatever,
-        // }, () => {
-        //     this.addOnscalculationEffort(this.state);
-        //     console.log("Hour", this.state.lightbox, this.state.toaster, this.state.whatever);
-        //     console.log("Total Hours:", this.state.addOnsEffort);
-        // });
-
-        this.setState({
-            addOnsEffort: e.target.checked ? this.state.addOnsEffort + parseInt(e.target.value) : this.state.addOnsEffort - parseInt(e.target.value)
-        })
-
-
-    }
+    
 
     addOnscalculationEffort = () => {
         this.setState({ addOnsEffort: this.state.lightbox + this.state.toaster + this.state.whatever });
@@ -113,18 +300,26 @@ export default class App extends React.Component {
 
                 <div style={{ marginTop: '40px' }}>
                     {
-                        this.state.activeStep === 1 ? <Estimation FindCalculation={this.EstimationCalculation} /> : this.state.activeStep === 2 ? <AddOns FindCalculation={this.AddOnsCalculation} /> : <EffortCalculate name={this.state.totalEffort} addOnEffort={this.state.addOnsEffort} />
+                        this.state.activeStep === 1 ? <Estimation essentialLoadData={this.state.essentialOriginalData} FindCalculation={this.EstimationCalculation} /> : this.state.activeStep === 2 ? <AddOns addOnsLoadData={this.state.addOnsOriginalData} FindCalculation={this.AddOnsCalculation} /> : <EffortCalculate totalEffort={this.state.totalEffort} CalculationEffortData={calculationLoadData} name={this.state.totalEffort} addOnEffort={this.state.addOnsEffort} />
                     }
                 </div>
 
 
 
 
-                <div class="button">
-                    <input type="button" value={this.state.activeStep === steps.length ? 'Finish' : 'Next'}
-                        onClick={this.state.activeStep === steps.length ? this.handleOnClickFinish : this.handleOnClickNext} />
-                    {this.state.activeStep === 1 ? '' : <input type="button" value="Back" onClick={this.handleOnClickBack} />}
+                <div className="button">
+                    <div className="btn1">
+                        {this.state.activeStep === 1 ? '' : <input type="button" value="Back" onClick={this.handleOnClickBack} />}
+                    </div>
+                    <div className="btn2">
+                        <input type="button" value={this.state.activeStep === steps.length ? 'Finish' : 'Next'}
+                            onClick={this.state.activeStep === steps.length ? this.handleOnClickFinish : this.handleOnClickNext} />
+                    </div>
+
+
                 </div>
+
+
 
 
             </React.Fragment>

@@ -67,6 +67,18 @@ h1 {
   border-color: #5cdb95;
 }
 
+.btn1 {
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+}
+
+.btn2 {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -126,9 +138,7 @@ input[type="checkbox"] {
     font-size: 2.3vw!important;
     min-width: 26.9vw;
   }
-  body {
-    overflow-y: hidden;
-  }
+  
   body .stepper-item-outer:nth-of-type(odd) .stepper-item-inner.stepper-item-inner-active {
     width: 3.18vw;
     height: 3.18vw;

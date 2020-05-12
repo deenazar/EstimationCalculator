@@ -8,24 +8,37 @@ export default class CalculationEffortComponent extends Component {
         this.state = {
             Effort: this.props.name,
             addOn: this.props.addOnEffort,
-            status:false
+            status: false,
+            calculationEffortData: this.props.CalculationEffortData,
+            totalEffort: this.props.totalEffort
         }
 
-        console.log(this.state.Effort);
+        console.log("total Data", this.state.calculationEffortData);
     }
 
     render() {
 
         var totalEffort = 0;
-        console.log("before",totalEffort, "estimation Effort:", this.state.Effort , "addOns Effort:", this.state.addOn)
-        totalEffort = this.state.Effort + this.state.addOn;
-        console.log("after",totalEffort, "estimation Effort:", this.state.Effort , "addOns Effort:", this.state.addOn)
+
 
         return (
             <div class="calHeading">
-                Total Effort: {totalEffort} Hrs
+                {
+                    this.state.calculationEffortData.map(rowData =>
+                        <div>
+                            <div className="showReport">
+                                <div className="reportHeading">{rowData.name} </div>
+                                <div className="reportScore"> - {rowData.value} Hrs</div>
+                            </div>
 
-                <hr></hr>
+
+                        </div>
+
+                    )
+                }
+                <hr className="totalHr"></hr>
+                <h1 className="totalEffort" >Total Effort: {this.state.totalEffort} Hrs </h1>
+
             </div>
         )
     }

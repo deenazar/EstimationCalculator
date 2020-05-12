@@ -25,3 +25,32 @@
     text-align: center;
     padding: 35px;
 }
+
+.showReport {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.reportHeading {
+  display: inline-block;
+  width: 70%;
+}
+
+.reportScore {
+  display: inline-block;
+  
+}
+
+body hr.totalHr {
+  width: 12vw;
+  border: 0.3px solid #fff;
+  opacity: 0.4;
+  margin-right: 0px;
+}
+
+h1.totalEffort {
+  text-align: right;
+  /* right: 20px; */
+}

@@ -74,7 +74,7 @@ input[type="checkbox"] {
     border-radius: 5px;
 }
 
-@media (max-width:1023px) {
+@media (max-width:767px) {
     .container {
         width: 80%;
     }
@@ -86,8 +86,8 @@ input[type="checkbox"] {
         /* padding-left: 30px; */
     }
     .subTitle p {
-        padding-left: 7vw;
-        font-size: 3.3vw;
+        padding-left: 8vw;
+        font-size: 3.8vw;
     }
     .childContainer h1 {
         font-size: 2.85vw;
@@ -95,5 +95,46 @@ input[type="checkbox"] {
     input[type="checkbox"] {
         width: 4vw;
         height: 4vw;
+    }
+    .childContainer input[type=radio] {
+        margin-left: 5vw;
+    }
+    .childContainer input[type=radio]:first-child {
+        margin-left: 0;
+    }
+    .subTitle p:first-child {
+        padding-left: 0px;
+    }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+    .subTitle {
+        width: 85%;
+        /* padding-left: 30px; */
+    }
+    .subTitle p {
+        padding-left: 8vw;
+        font-size: 3.8vw;
+    }
+    .childContainer h1 {
+        font-size: 2.85vw;
+    }
+    .childContainer input[type=radio]:first-child {
+        margin-left: 0;
+    }
+    .estimationcontrols {
+        padding-left: 0.9vw;
+        width: 35%;
+    }
+    .childContainer input[type=radio] {
+        margin-left: 6.2vw;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width:767px) and (orientation:landscape){
+    .childContainer input[type=radio] {
+        margin-left:8.2vw;
     }
 }
