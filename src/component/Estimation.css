@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    padding-top: 5vw;
 }
 
 .container .childContainer {
@@ -42,9 +43,35 @@
 
 .subTitle p {
     display: inline-block;
-    padding-left: 4vw;
+    padding-left: 5vw;
+    font-size: 1.5vw;
+    font-weight: bold;
 }
 
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    position: relative;
+    background-color: #007cc3;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+        border-radius: 50%;
+}
 .estimationTitle {
     width: 55%;
     display: inline-block;
@@ -61,7 +88,7 @@
 
 .subTitle {
     text-align: right;
-    width: 42.2vw;
+    width: 45vw;
     /* margin-right: 22px; */
 }
 

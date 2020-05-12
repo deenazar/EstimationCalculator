@@ -15,9 +15,11 @@
 }
 
 .heading {
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 32px;
+ 
     letter-spacing: 2px;
+    font-weight: bolder;
+    text-transform: uppercase;
 }
 
 .addOnTitle {
@@ -40,10 +42,17 @@
     width: 52.4vw;
     margin: 0 auto;
 }
+div#root hr.totalHr {
+    width:100vw;
+    max-width:50vw;
+}
 
 .childContainer h1 {
     text-align: left;
     font-size: 1.54vw;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+        font-weight: 500;
 }
 
 

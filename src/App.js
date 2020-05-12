@@ -274,7 +274,8 @@ export default class App extends React.Component {
 
     handleOnClickFinish = () => {
         let nextStep = 1;
-        this.setState({ activeStep: nextStep })
+        this.setState({activeStep: nextStep , essentialOriginalData: [] , addOnsOriginalData: [] })
+        //this.setState({ activeStep: nextStep })
     }
 
     
