@@ -95,7 +95,6 @@ var essentialLoadData = [
         ]
 
     }
-
 ]
 
 var addOnsLoadData = [
@@ -230,8 +229,10 @@ export default class App extends React.Component {
                     subdata.checked = e.target.checked;
                 }
                 else {
-                    console.log("event", subdata.name);
-                    subdata.checked =  false;
+                    if(subdata.name == e.target.name){
+                        subdata.checked =  false;
+                    }
+                    
                 }
             }
             )

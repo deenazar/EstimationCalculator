@@ -59,7 +59,7 @@ export default class Estimation extends Component {
                                     rowData.detail.map(subrow =>
                                        
                                            
-                                                <input id={subrow.find} checked={subrow.checked} type={subrow.type} value={subrow.value} onChange={this.props.FindCalculation} />
+                                                <input id={subrow.find} checked={subrow.checked} name={subrow.name} type={subrow.type} value={subrow.value} onChange={this.props.FindCalculation} />
                                            
                                         
                                     )
