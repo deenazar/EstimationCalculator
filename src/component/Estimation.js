@@ -3,6 +3,11 @@ import './Estimation.css';
 
 
 var score = 0;
+var alp = {
+    a:0,
+    b:1,
+    c:2
+}
 
 
 
@@ -18,6 +23,15 @@ export default class Estimation extends Component {
             totalScore: 0,
             essentialLoadData: this.props.essentialLoadData
         }
+
+        this.state.essentialLoadData.map((x) => {
+            Object.keys(x.options).map((data,i) => {
+                console.log("name", data[i])
+            })
+        }
+        )
+
+
 
     }
 
@@ -52,18 +66,14 @@ export default class Estimation extends Component {
                         this.state.essentialLoadData.map(rowData =>
                             <div class="childContainer">
                                 <div class="estimationTitle">
-                                    <h1>{rowData.mainTitle}</h1>
+                                    <h1>{rowData.name}</h1>
                                 </div>
                                 <div class="estimationcontrols">
-                                {
-                                    rowData.detail.map(subrow =>
-                                       
-                                           
-                                                <input id={subrow.find} checked={subrow.checked} name={subrow.name} type={subrow.type} value={subrow.value} onChange={this.props.FindCalculation} />
-                                           
-                                        
-                                    )
-                                }
+                                    {
+                                        Object.keys(rowData.options).map((op, i) =>
+                                            <input checked={rowData.choosen === op ? true : false} name={rowData.name} type="radio" value={op} onChange={this.props.FindCalculation} />
+                                        )
+                                    }
                                 </div>
 
                             </div>

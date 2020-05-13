@@ -13,88 +13,34 @@ const steps = [{ title: 'Essential effort' }, { title: 'Add-Ons' }, { title: 'Ma
 
 var essentialLoadData = [
     {
-        Heading: "Essential",
-        mainTitle: 'Header',
-        detail: [
-            {
-                find: 'H1',
-                type: 'radio',
-                value: 2,
-                name: "Header",
-                checked: false
-            },
-            {
-                find: 'H2',
-                type: 'radio',
-                value: 4,
-                name: "Header",
-                checked: false
-            },
-            {
-                find: 'H3',
-                type: 'radio',
-                value: 6,
-                name: "Header",
-                checked: false
-            }
-        ]
-
+        name: 'Header',
+        options:
+        {
+            Small: 2,
+            Medium: 4,
+            Large: 6
+        },
+        choosen: ''
     },
     {
-        Heading: "Essential",
-        mainTitle: 'Videos',
-        detail: [
-            {
-                find: 'V1',
-                type: 'radio',
-                value: 2,
-                name: "Videos",
-                checked: false
-            },
-            {
-                find: 'V2',
-                type: 'radio',
-                value: 4,
-                name: "Videos",
-                checked: false
-            },
-            {
-                find: 'V3',
-                type: 'radio',
-                value: 6,
-                name: "Videos",
-                checked: false
-            }
-        ]
-
+        name: 'Videos',
+        options:
+        {
+            Small: 2,
+            Medium: 4,
+            Large: 6
+        },
+        choosen: ''
     },
     {
-        Heading: "Essential",
-        mainTitle: 'Photos',
-        detail: [
-            {
-                find: 'P1',
-                type: 'radio',
-                value: 2,
-                name: "Photos",
-                checked: false
-            },
-            {
-                find: 'P2',
-                type: 'radio',
-                value: 4,
-                name: "Photos",
-                checked: false
-            },
-            {
-                find: 'P3',
-                type: 'radio',
-                value: 6,
-                name: "Photos",
-                checked: false
-            }
-        ]
-
+        name: 'Photos',
+        options:
+        {
+            Small: 2,
+            Medium: 4,
+            Large: 6
+        },
+        choosen: ''
     }
 ]
 
@@ -106,7 +52,7 @@ var addOnsLoadData = [
             {
                 find: 'T1',
                 type: 'checkbox',
-                name:"Mailing List Block (in Page)",
+                name: "Mailing List Block (in Page)",
                 value: 12,
                 checked: false
             }
@@ -120,7 +66,7 @@ var addOnsLoadData = [
             {
                 find: 'L1',
                 type: 'checkbox',
-                name:"Turnkey LightBox",
+                name: "Turnkey LightBox",
                 value: 4,
                 checked: false
             }
@@ -135,7 +81,7 @@ var addOnsLoadData = [
                 find: 'W1',
                 type: 'checkbox',
                 value: 4,
-                name:"Turnkey Toaster",
+                name: "Turnkey Toaster",
                 checked: false
             }
         ]
@@ -149,7 +95,7 @@ var addOnsLoadData = [
                 find: 'W1',
                 type: 'checkbox',
                 value: 2,
-                name:"Cookie Banner",
+                name: "Cookie Banner",
                 checked: false
             }
         ]
@@ -163,7 +109,7 @@ var addOnsLoadData = [
                 find: 'W1',
                 type: 'checkbox',
                 value: 4,
-                name:"Mailing List Page",
+                name: "Mailing List Page",
                 checked: false
             }
         ]
@@ -177,7 +123,7 @@ var addOnsLoadData = [
                 find: 'W1',
                 type: 'checkbox',
                 value: 4,
-                name:"Song Kick Widget",
+                name: "Song Kick Widget",
                 checked: false
             }
         ]
@@ -193,7 +139,7 @@ var mandatoryLoadData = [
             {
                 find: 'M1',
                 type: 'checkbox',
-                name:"Site cleanup",
+                name: "Site cleanup",
                 value: 4,
                 checked: false
             }
@@ -207,7 +153,7 @@ var mandatoryLoadData = [
             {
                 find: 'M2',
                 type: 'checkbox',
-                name:"DTM",
+                name: "DTM",
                 value: 8,
                 checked: false
             }
@@ -221,7 +167,7 @@ var mandatoryLoadData = [
             {
                 find: 'M3',
                 type: 'checkbox',
-                name:"404/403  Page",
+                name: "404/403  Page",
                 value: 4,
                 checked: false
             }
@@ -235,7 +181,7 @@ var mandatoryLoadData = [
             {
                 find: 'M4',
                 type: 'checkbox',
-                name:"SEO/Favicon",
+                name: "SEO/Favicon",
                 value: 4,
                 checked: false
             }
@@ -249,7 +195,7 @@ var mandatoryLoadData = [
             {
                 find: 'M5',
                 type: 'checkbox',
-                name:"Footer Section(Without Mailing List)",
+                name: "Footer Section(Without Mailing List)",
                 value: 4,
                 checked: false
             }
@@ -263,7 +209,7 @@ var mandatoryLoadData = [
             {
                 find: 'M6',
                 type: 'checkbox',
-                name:"Pre Launch Activities",
+                name: "Pre Launch Activities",
                 value: 12,
                 checked: false
             }
@@ -370,7 +316,7 @@ var addOnsCopyLoadData = [
             {
                 find: 'T1',
                 type: 'checkbox',
-                name:"Mailing List Block (in Page)",
+                name: "Mailing List Block (in Page)",
                 value: 12,
                 checked: false
             }
@@ -384,7 +330,7 @@ var addOnsCopyLoadData = [
             {
                 find: 'L1',
                 type: 'checkbox',
-                name:"Turnkey LightBox",
+                name: "Turnkey LightBox",
                 value: 4,
                 checked: false
             }
@@ -399,7 +345,7 @@ var addOnsCopyLoadData = [
                 find: 'W1',
                 type: 'checkbox',
                 value: 4,
-                name:"Turnkey Toaster",
+                name: "Turnkey Toaster",
                 checked: false
             }
         ]
@@ -413,7 +359,7 @@ var addOnsCopyLoadData = [
                 find: 'W1',
                 type: 'checkbox',
                 value: 2,
-                name:"Cookie Banner",
+                name: "Cookie Banner",
                 checked: false
             }
         ]
@@ -427,7 +373,7 @@ var addOnsCopyLoadData = [
                 find: 'W1',
                 type: 'checkbox',
                 value: 4,
-                name:"Mailing List Page",
+                name: "Mailing List Page",
                 checked: false
             }
         ]
@@ -441,7 +387,7 @@ var addOnsCopyLoadData = [
                 find: 'W1',
                 type: 'checkbox',
                 value: 4,
-                name:"Song Kick Widget",
+                name: "Song Kick Widget",
                 checked: false
             }
         ]
@@ -457,7 +403,7 @@ var mandatoryCopyLoadData = [
             {
                 find: 'M1',
                 type: 'checkbox',
-                name:"Site cleanup",
+                name: "Site cleanup",
                 value: 4,
                 checked: false
             }
@@ -471,7 +417,7 @@ var mandatoryCopyLoadData = [
             {
                 find: 'M2',
                 type: 'checkbox',
-                name:"DTM",
+                name: "DTM",
                 value: 8,
                 checked: false
             }
@@ -485,7 +431,7 @@ var mandatoryCopyLoadData = [
             {
                 find: 'M3',
                 type: 'checkbox',
-                name:"404/403  Page",
+                name: "404/403  Page",
                 value: 4,
                 checked: false
             }
@@ -499,7 +445,7 @@ var mandatoryCopyLoadData = [
             {
                 find: 'M4',
                 type: 'checkbox',
-                name:"SEO/Favicon",
+                name: "SEO/Favicon",
                 value: 4,
                 checked: false
             }
@@ -513,7 +459,7 @@ var mandatoryCopyLoadData = [
             {
                 find: 'M5',
                 type: 'checkbox',
-                name:"Footer Section(Without Mailing List)",
+                name: "Footer Section(Without Mailing List)",
                 value: 4,
                 checked: false
             }
@@ -527,7 +473,7 @@ var mandatoryCopyLoadData = [
             {
                 find: 'M6',
                 type: 'checkbox',
-                name:"Pre Launch Activities",
+                name: "Pre Launch Activities",
                 value: 12,
                 checked: false
             }
@@ -548,7 +494,7 @@ export default class App extends React.Component {
             activeStep: 1,
             essentialOriginalData: essentialLoadData,
             addOnsOriginalData: addOnsLoadData,
-            mandatoryOriginalData:mandatoryLoadData,
+            mandatoryOriginalData: mandatoryLoadData,
             calculationEffortData: calculationLoadData,
             totalEffort: 0
         }
@@ -567,33 +513,39 @@ export default class App extends React.Component {
     }
 
     handleOnClickStepper = (step) => {
-        if(step == steps.length){
+        if (step == steps.length) {
             this.TotalEffortCalculation(steps.length, step)
         }
-        else{
+        else {
             this.setState({ activeStep: step }, () => {
                 this.InitialEffortSet();
             });
         }
-        
+
 
     }
 
     TotalEffortCalculation = (length, step) => {
 
         let effort = 0;
+        var tempObj = {};
         calculationLoadData = [];
-        console.log("steps", step, length);
+        console.log("steps", step, length, this.state.essentialOriginalData);
         if (step == length) {
-            
-            console.log("datas", this.state.essentialOriginalData, this.state.addOnsOriginalData);
-            this.state.essentialOriginalData.map((temp) =>
-                temp.detail.map((subTemp) => {
-                    if (subTemp.checked) {
-                        calculationLoadData.push(subTemp);
-                        effort = effort + subTemp.value;
-                    }
-                })
+
+            this.state.essentialOriginalData.map((temp) => {
+                tempObj = {};
+                if(temp.choosen != ""){
+                    tempObj.name = temp.name + " - " + temp.choosen;
+                    tempObj.value = temp.options[temp.choosen];
+                    
+                    calculationLoadData.push(tempObj);
+                    effort = effort + temp.options[temp.choosen];
+    
+                    console.log("totalData", tempObj.name, tempObj.value, effort);
+    
+                }
+            }
             )
 
             this.state.addOnsOriginalData.map((temp) =>
@@ -616,36 +568,28 @@ export default class App extends React.Component {
         }
 
         this.setState({
-            calculationEffortData: calculationLoadData, totalEffort: effort , activeStep: step
+            calculationEffortData: calculationLoadData, totalEffort: effort, activeStep: step
         }, console.log("Calculation Data", this.state.calculationEffortData, this.state.totalEffort));
 
-        
+
 
     }
 
     EstimationCalculation = (e) => {
-        console.log("name", e.target.name);
+        console.log("name", e.target.value.toString());
 
-        calculationLoadData = [];
+        // calculationLoadData = [];
 
-        essentialLoadData.map((data) =>
-            data.detail.map((subdata) => {
-                if (subdata.find === e.target.id) {
-                    subdata.checked = e.target.checked;
-                }
-                else {
-                    if(subdata.name == e.target.name){
-                        subdata.checked =  false;
-                    }
-                    
-                }
+        essentialLoadData.map((data) => {
+            if(e.target.name == data.name){
+                data.choosen = e.target.value.toString();
             }
-            )
+        }
         );
 
         this.setState({
             essentialOriginalData: essentialLoadData
-        })
+        });
 
     }
 
@@ -697,10 +641,10 @@ export default class App extends React.Component {
 
     handleOnClickFinish = () => {
         let nextStep = 1;
-        this.setState({activeStep: nextStep , essentialOriginalData: essentialCopyLoadData , addOnsOriginalData: addOnsCopyLoadData, mandatoryOriginalData: mandatoryCopyLoadData })
+        this.setState({ activeStep: nextStep, essentialOriginalData: essentialCopyLoadData, addOnsOriginalData: addOnsCopyLoadData, mandatoryOriginalData: mandatoryCopyLoadData })
         //this.setState({ activeStep: nextStep })
     }
-    
+
 
     render() {
         return (
