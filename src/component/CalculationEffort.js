@@ -6,9 +6,6 @@ export default class CalculationEffortComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Effort: this.props.name,
-            addOn: this.props.addOnEffort,
-            status: false,
             calculationEffortData: this.props.CalculationEffortData,
             totalEffort: this.props.totalEffort
         }

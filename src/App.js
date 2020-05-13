@@ -2,13 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Stepper from 'react-js-stepper';
-//import EssentialComponent from './EssentialTask.js';
-
 import Estimation from './component/Estimation.js';
 import AddOns from './component/AddOns.js';
 import EffortCalculate from './component/CalculationEffort.js';
 import MandatoryComponent from './component/Mandatory';
 
+
+// Variable declaration
 const steps = [{ title: 'Essential effort' }, { title: 'Add-Ons' }, { title: 'Mandatory' }, { title: 'Show Effort' },]
 
 var essentialLoadData = [
@@ -47,440 +47,192 @@ var essentialLoadData = [
 var addOnsLoadData = [
     {
         Heading: "AddOns",
-        mainTitle: 'Mailing List Block (in Page)',
         detail: [
             {
-                find: 'T1',
-                type: 'checkbox',
-                name: "Mailing List Block (in Page)",
+                name:"Mailing List Block (in Page)",
                 value: 12,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "AddOns",
-        mainTitle: 'Turnkey LightBox',
-        detail: [
+            },
             {
-                find: 'L1',
-                type: 'checkbox',
                 name: "Turnkey LightBox",
                 value: 4,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "AddOns",
-        mainTitle: 'Turnkey Toaster',
-        detail: [
+            },
             {
-                find: 'W1',
-                type: 'checkbox',
                 value: 4,
                 name: "Turnkey Toaster",
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "AddOns",
-        mainTitle: 'Cookie Banner',
-        detail: [
+            },
             {
-                find: 'W1',
-                type: 'checkbox',
                 value: 2,
                 name: "Cookie Banner",
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "AddOns",
-        mainTitle: 'Mailing List Page',
-        detail: [
+            },
             {
-                find: 'W1',
-                type: 'checkbox',
                 value: 4,
                 name: "Mailing List Page",
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "AddOns",
-        mainTitle: 'Song Kick Widget',
-        detail: [
+            },
             {
-                find: 'W1',
-                type: 'checkbox',
                 value: 4,
                 name: "Song Kick Widget",
                 checked: false
             }
+
         ]
 
-    },
+    }
 ]
 
 var mandatoryLoadData = [
     {
         Heading: "Mandatory",
-        mainTitle: 'Site cleanup',
         detail: [
             {
-                find: 'M1',
-                type: 'checkbox',
                 name: "Site cleanup",
                 value: 4,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "Mandatory",
-        mainTitle: 'DTM',
-        detail: [
+            },
             {
-                find: 'M2',
-                type: 'checkbox',
                 name: "DTM",
                 value: 8,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "Mandatory",
-        mainTitle: '404/403  Page',
-        detail: [
+            },
             {
-                find: 'M3',
-                type: 'checkbox',
                 name: "404/403  Page",
                 value: 4,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "Mandatory",
-        mainTitle: 'SEO/Favicon',
-        detail: [
+            },
             {
-                find: 'M4',
-                type: 'checkbox',
                 name: "SEO/Favicon",
                 value: 4,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "Mandatory",
-        mainTitle: 'Footer Section(Without Mailing List)',
-        detail: [
+            },
             {
-                find: 'M5',
-                type: 'checkbox',
                 name: "Footer Section(Without Mailing List)",
                 value: 4,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "Mandatory",
-        mainTitle: 'Pre Launch Activities',
-        detail: [
+            },
             {
-                find: 'M6',
-                type: 'checkbox',
                 name: "Pre Launch Activities",
                 value: 12,
                 checked: false
             }
         ]
-
-    },
-
+    }
 ]
 
 // Clone JSON array object - For use of when refresh the controls
 
 var essentialCopyLoadData = [
     {
-        Heading: "Essential",
-        mainTitle: 'Header',
-        detail: [
-            {
-                find: 'H1',
-                type: 'radio',
-                value: 2,
-                name: "Header",
-                checked: false
-            },
-            {
-                find: 'H2',
-                type: 'radio',
-                value: 4,
-                name: "Header",
-                checked: false
-            },
-            {
-                find: 'H3',
-                type: 'radio',
-                value: 6,
-                name: "Header",
-                checked: false
-            }
-        ]
-
+        name: 'Header',
+        options:
+        {
+            Small: 2,
+            Medium: 4,
+            Large: 6
+        },
+        choosen: ''
     },
     {
-        Heading: "Essential",
-        mainTitle: 'Videos',
-        detail: [
-            {
-                find: 'V1',
-                type: 'radio',
-                value: 2,
-                name: "Videos",
-                checked: false
-            },
-            {
-                find: 'V2',
-                type: 'radio',
-                value: 4,
-                name: "Videos",
-                checked: false
-            },
-            {
-                find: 'V3',
-                type: 'radio',
-                value: 6,
-                name: "Videos",
-                checked: false
-            }
-        ]
-
+        name: 'Videos',
+        options:
+        {
+            Small: 2,
+            Medium: 4,
+            Large: 6
+        },
+        choosen: ''
     },
     {
-        Heading: "Essential",
-        mainTitle: 'Photos',
-        detail: [
-            {
-                find: 'P1',
-                type: 'radio',
-                value: 2,
-                name: "Photos",
-                checked: false
-            },
-            {
-                find: 'P2',
-                type: 'radio',
-                value: 4,
-                name: "Photos",
-                checked: false
-            },
-            {
-                find: 'P3',
-                type: 'radio',
-                value: 6,
-                name: "Photos",
-                checked: false
-            }
-        ]
-
+        name: 'Photos',
+        options:
+        {
+            Small: 2,
+            Medium: 4,
+            Large: 6
+        },
+        choosen: ''
     }
 ]
 
 var addOnsCopyLoadData = [
     {
         Heading: "AddOns",
-        mainTitle: 'Mailing List Block (in Page)',
         detail: [
             {
-                find: 'T1',
-                type: 'checkbox',
-                name: "Mailing List Block (in Page)",
+                name:"Mailing List Block (in Page)",
                 value: 12,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "AddOns",
-        mainTitle: 'Turnkey LightBox',
-        detail: [
+            },
             {
-                find: 'L1',
-                type: 'checkbox',
                 name: "Turnkey LightBox",
                 value: 4,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "AddOns",
-        mainTitle: 'Turnkey Toaster',
-        detail: [
+            },
             {
-                find: 'W1',
-                type: 'checkbox',
                 value: 4,
                 name: "Turnkey Toaster",
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "AddOns",
-        mainTitle: 'Cookie Banner',
-        detail: [
+            },
             {
-                find: 'W1',
-                type: 'checkbox',
                 value: 2,
                 name: "Cookie Banner",
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "AddOns",
-        mainTitle: 'Mailing List Page',
-        detail: [
+            },
             {
-                find: 'W1',
-                type: 'checkbox',
                 value: 4,
                 name: "Mailing List Page",
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "AddOns",
-        mainTitle: 'Song Kick Widget',
-        detail: [
+            },
             {
-                find: 'W1',
-                type: 'checkbox',
                 value: 4,
                 name: "Song Kick Widget",
                 checked: false
             }
+
         ]
 
-    },
+    }
 ]
 
 var mandatoryCopyLoadData = [
     {
         Heading: "Mandatory",
-        mainTitle: 'Site cleanup',
         detail: [
             {
-                find: 'M1',
-                type: 'checkbox',
                 name: "Site cleanup",
                 value: 4,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "Mandatory",
-        mainTitle: 'DTM',
-        detail: [
+            },
             {
-                find: 'M2',
-                type: 'checkbox',
                 name: "DTM",
                 value: 8,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "Mandatory",
-        mainTitle: '404/403  Page',
-        detail: [
+            },
             {
-                find: 'M3',
-                type: 'checkbox',
                 name: "404/403  Page",
                 value: 4,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "Mandatory",
-        mainTitle: 'SEO/Favicon',
-        detail: [
+            },
             {
-                find: 'M4',
-                type: 'checkbox',
                 name: "SEO/Favicon",
                 value: 4,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "Mandatory",
-        mainTitle: 'Footer Section(Without Mailing List)',
-        detail: [
+            },
             {
-                find: 'M5',
-                type: 'checkbox',
                 name: "Footer Section(Without Mailing List)",
                 value: 4,
                 checked: false
-            }
-        ]
-
-    },
-    {
-        Heading: "Mandatory",
-        mainTitle: 'Pre Launch Activities',
-        detail: [
+            },
             {
-                find: 'M6',
-                type: 'checkbox',
                 name: "Pre Launch Activities",
                 value: 12,
                 checked: false
             }
         ]
-
-    },
-
+    }
 ]
 
 var calculationLoadData = [];
@@ -525,25 +277,21 @@ export default class App extends React.Component {
 
     }
 
+    // Calculate the total effort here,
+
     TotalEffortCalculation = (length, step) => {
 
         let effort = 0;
         var tempObj = {};
         calculationLoadData = [];
-        console.log("steps", step, length, this.state.essentialOriginalData);
         if (step == length) {
-
             this.state.essentialOriginalData.map((temp) => {
                 tempObj = {};
                 if(temp.choosen != ""){
                     tempObj.name = temp.name + " - " + temp.choosen;
                     tempObj.value = temp.options[temp.choosen];
-                    
                     calculationLoadData.push(tempObj);
                     effort = effort + temp.options[temp.choosen];
-    
-                    console.log("totalData", tempObj.name, tempObj.value, effort);
-    
                 }
             }
             )
@@ -569,14 +317,12 @@ export default class App extends React.Component {
 
         this.setState({
             calculationEffortData: calculationLoadData, totalEffort: effort, activeStep: step
-        }, console.log("Calculation Data", this.state.calculationEffortData, this.state.totalEffort));
-
+        });
 
 
     }
 
     EstimationCalculation = (e) => {
-        console.log("name", e.target.value.toString());
 
         // calculationLoadData = [];
 
@@ -594,13 +340,12 @@ export default class App extends React.Component {
     }
 
     AddOnsCalculation = (e) => {
-        console.log(e.target.checked)
         calculationLoadData = [];
 
 
         addOnsLoadData.map((data) =>
             data.detail.map((subdata) => {
-                subdata.checked = subdata.find === e.target.id ? e.target.checked : subdata.checked;
+                subdata.checked = subdata.name === e.target.name ? e.target.checked : subdata.checked;
             }
             )
         );
@@ -612,13 +357,11 @@ export default class App extends React.Component {
     }
 
     MandatoryCalculation = (e) => {
-        console.log(e.target.checked)
         calculationLoadData = [];
-
 
         mandatoryLoadData.map((data) =>
             data.detail.map((subdata) => {
-                subdata.checked = subdata.find === e.target.id ? e.target.checked : subdata.checked;
+                subdata.checked = subdata.name === e.target.name ? e.target.checked : subdata.checked;
             }
             )
         );
@@ -678,18 +421,7 @@ export default class App extends React.Component {
 
                 </div>
 
-
-
-
             </React.Fragment>
         )
     }
 }
-
-
-// <div style={{ marginTop: '40px' }}>
-//     {this.state.activeStep === 1 ? <div> You are in Stage {this.state.activeStep} </div> :
-//         this.state.activeStep === 2 ? <div> You are in Stage {this.state.activeStep} </div> :
-//             <div> You are in Stage {this.state.activeStep} </div>
-//     }
-// </div>
