@@ -38,11 +38,14 @@
 .reportHeading {
   display: inline-block;
   width: 70%;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .reportScore {
   display: inline-block;
-  
+  font-size: 16px;
+  font-weight: 500;
 }
 
 body hr.totalHr {
@@ -61,6 +64,7 @@ h1.totalEffort {
   color:red;
   font-size: 12px;
   text-align: left;
+  font-weight: 500;
 }
 
 input.EffortNameClass {
@@ -86,14 +90,14 @@ input.EffortValueClass {
 
 .addreportHeading {
   display: inline-block;
-  width: 70%;
+  width: 50%;
 }
 
 .addbtn1 {
-  display: block;
-  width: 85%;
+  display: inline-block;
+  width: 20%;
   text-align: right;
-  margin-top: 10px;
+  vertical-align: top;
 }
 
 button {
@@ -110,7 +114,7 @@ button {
   display: block;
   margin: 0 auto;
   text-align: left;
-  padding-top:20px;
+  padding:40px 0px;
 }
 
 .addreportScore {

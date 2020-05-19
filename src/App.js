@@ -6,10 +6,11 @@ import Estimation from './component/Estimation.js';
 import AddOns from './component/AddOns.js';
 import EffortCalculate from './component/CalculationEffort.js';
 import MandatoryComponent from './component/Mandatory';
+import CustomComponent from './component/Custom.js';
 
 
 // Variable declaration
-const steps = [{ title: 'Essential effort' }, { title: 'Add-Ons' }, { title: 'Mandatory' }, { title: 'Show Effort' },]
+const steps = [{ title: 'Essential effort' }, { title: 'Add-Ons' }, { title: 'Mandatory' }, { title: 'Custom' }, { title: 'Show Effort' },]
 
 var essentialLoadData = [
     {
@@ -49,7 +50,7 @@ var addOnsLoadData = [
         Heading: "AddOns",
         detail: [
             {
-                name:"Mailing List Block (in Page)",
+                name: "Mailing List Block (in Page)",
                 value: 12,
                 checked: false
             },
@@ -122,6 +123,8 @@ var mandatoryLoadData = [
     }
 ]
 
+var customLoadData = [];
+
 // Clone JSON array object - For use of when refresh the controls
 
 var essentialCopyLoadData = [
@@ -162,7 +165,7 @@ var addOnsCopyLoadData = [
         Heading: "AddOns",
         detail: [
             {
-                name:"Mailing List Block (in Page)",
+                name: "Mailing List Block (in Page)",
                 value: 12,
                 checked: false
             },
@@ -235,8 +238,18 @@ var mandatoryCopyLoadData = [
     }
 ]
 
+var customCopyLoadData = [];
+
+
+
 var calculationLoadData = [];
 var effort = 0;
+
+const initialState = {
+    externalEffort: 0,
+    externalEffortName: '',
+    externalEffortError: ''
+}
 
 export default class App extends React.Component {
     constructor(props) {
@@ -248,8 +261,13 @@ export default class App extends React.Component {
             addOnsOriginalData: addOnsLoadData,
             mandatoryOriginalData: mandatoryLoadData,
             calculationEffortData: calculationLoadData,
-            totalEffort: 0
+            customLoadData: customLoadData,
+            totalEffort: 0,
+            initialState: initialState,
+            externalError:''
         }
+
+        this.componentRef = React.createRef();
     }
 
     InitialEffortSet = () => {
@@ -287,7 +305,7 @@ export default class App extends React.Component {
         if (step == length) {
             this.state.essentialOriginalData.map((temp) => {
                 tempObj = {};
-                if(temp.choosen != ""){
+                if (temp.choosen != "") {
                     tempObj.name = temp.name + " - " + temp.choosen;
                     tempObj.value = temp.options[temp.choosen];
                     calculationLoadData.push(tempObj);
@@ -313,6 +331,11 @@ export default class App extends React.Component {
                     }
                 })
             )
+
+            this.state.customLoadData.map((temp) => {
+                calculationLoadData.push(temp);
+                effort = effort + parseInt(temp.value);
+            })
         }
 
         this.setState({
@@ -327,7 +350,7 @@ export default class App extends React.Component {
         // calculationLoadData = [];
 
         essentialLoadData.map((data) => {
-            if(e.target.name == data.name){
+            if (e.target.name == data.name) {
                 data.choosen = e.target.value.toString();
             }
         }
@@ -384,8 +407,46 @@ export default class App extends React.Component {
 
     handleOnClickFinish = () => {
         let nextStep = 1;
-        this.setState({ activeStep: nextStep, essentialOriginalData: essentialCopyLoadData, addOnsOriginalData: addOnsCopyLoadData, mandatoryOriginalData: mandatoryCopyLoadData })
+        this.setState({ activeStep: nextStep, customLoadData: customCopyLoadData, essentialOriginalData: essentialCopyLoadData, addOnsOriginalData: addOnsCopyLoadData, mandatoryOriginalData: mandatoryCopyLoadData })
         //this.setState({ activeStep: nextStep })
+    }
+
+
+
+    addEffort = () => {
+
+        console.log("Data", this.componentRef.current);
+        let name = this.componentRef.current.externalEffortNameRef.current.value;
+        let value = this.componentRef.current.externalEffortRef.current.value;
+
+        if (value > 0 && name !== '') {
+
+            console.log("true", value, name);
+            let tempObj = {}
+            let tempArray = [];
+
+            tempObj.name = name;
+            tempObj.value = value;
+
+            tempArray = this.state.customLoadData;
+            tempArray.push(tempObj);
+
+            this.setState({
+                customLoadData: tempArray,
+                externalError: '',
+                //totalEffort: this.state.totalEffort + parseInt(tempObj.value),
+
+                // clear the form
+                initialState:{
+                    ...this.state.initialState,
+                    externalEffort: 0,
+                    externalEffortName:''
+                }
+            })
+        } else {
+            this.setState({ externalError: 'Invalid value of Effort and Hours'
+            })
+        }
     }
 
 
@@ -402,7 +463,11 @@ export default class App extends React.Component {
 
                 <div style={{ marginTop: '40px' }}>
                     {
-                        this.state.activeStep === 1 ? <Estimation essentialLoadData={this.state.essentialOriginalData} FindCalculation={this.EstimationCalculation} /> : this.state.activeStep === 2 ? <AddOns addOnsLoadData={this.state.addOnsOriginalData} FindCalculation={this.AddOnsCalculation} /> : this.state.activeStep === 3 ? <MandatoryComponent mandatoryLoadData={this.state.mandatoryOriginalData} FindCalculation={this.MandatoryCalculation} /> : <EffortCalculate totalEffort={this.state.totalEffort} CalculationEffortData={calculationLoadData} name={this.state.totalEffort} addOnEffort={this.state.addOnsEffort} />
+                        this.state.activeStep === 1 ? <Estimation essentialLoadData={this.state.essentialOriginalData} FindCalculation={this.EstimationCalculation} /> :
+                            this.state.activeStep === 2 ? <AddOns addOnsLoadData={this.state.addOnsOriginalData} FindCalculation={this.AddOnsCalculation} /> :
+                                this.state.activeStep === 3 ? <MandatoryComponent mandatoryLoadData={this.state.mandatoryOriginalData} FindCalculation={this.MandatoryCalculation} /> :
+                                    this.state.activeStep === 4 ? <CustomComponent externalError={this.state.externalError} ref={this.componentRef} initialState={this.state.initialState} customLoadData={this.state.customLoadData} addEffort={this.addEffort} /> :
+                                        <EffortCalculate totalEffort={this.state.totalEffort} CalculationEffortData={calculationLoadData} name={this.state.totalEffort} addOnEffort={this.state.addOnsEffort} />
                     }
                 </div>
 
