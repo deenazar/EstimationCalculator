@@ -28,9 +28,10 @@
 
 .showReport {
   display: block;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   text-align: left;
+  padding-top: 10px;
 }
 
 .reportHeading {
@@ -53,4 +54,76 @@ body hr.totalHr {
 h1.totalEffort {
   text-align: right;
   /* right: 20px; */
+}
+
+.error{
+  color:red;
+  font-size: 12px;
+  text-align: left;
+}
+
+input.EffortNameClass {
+  display: inline-block;
+  width: 53%;
+  padding:3px 0px;
+  padding-left: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+input.EffortValueClass {
+  display: inline-block;
+  width: 25%;
+  padding:3px 0px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+.addreportHeading {
+  display: inline-block;
+  width: 70%;
+}
+
+.addbtn1 {
+  display: block;
+  width: 85%;
+  text-align: right;
+  margin-top: 10px;
+}
+
+button {
+  background: #F64c72;
+  border: 0;
+  padding: 8px 25px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.addReport {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+  padding-top:20px;
+}
+
+.addreportScore {
+  display: inline-block;
+  width: 20%;
+}
+
+button.btn1 {
+  background: #F64c72;
+  border: 0;
+  padding: 6px 6px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  width: 20%;
+  text-align: center;
+  margin-right: 0;
 }

@@ -91,32 +91,32 @@ var mandatoryLoadData = [
             {
                 name: "Site cleanup",
                 value: 4,
-                checked: false
+                checked: true
             },
             {
                 name: "DTM",
                 value: 8,
-                checked: false
+                checked: true
             },
             {
                 name: "404/403  Page",
                 value: 4,
-                checked: false
+                checked: true
             },
             {
                 name: "SEO/Favicon",
                 value: 4,
-                checked: false
+                checked: true
             },
             {
                 name: "Footer Section(Without Mailing List)",
                 value: 4,
-                checked: false
+                checked: true
             },
             {
                 name: "Pre Launch Activities",
                 value: 12,
-                checked: false
+                checked: true
             }
         ]
     }
@@ -204,32 +204,32 @@ var mandatoryCopyLoadData = [
             {
                 name: "Site cleanup",
                 value: 4,
-                checked: false
+                checked: true
             },
             {
                 name: "DTM",
                 value: 8,
-                checked: false
+                checked: true
             },
             {
                 name: "404/403  Page",
                 value: 4,
-                checked: false
+                checked: true
             },
             {
                 name: "SEO/Favicon",
                 value: 4,
-                checked: false
+                checked: true
             },
             {
                 name: "Footer Section(Without Mailing List)",
                 value: 4,
-                checked: false
+                checked: true
             },
             {
                 name: "Pre Launch Activities",
                 value: 12,
-                checked: false
+                checked: true
             }
         ]
     }

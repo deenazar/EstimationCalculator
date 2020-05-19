@@ -16,21 +16,21 @@ export default class Estimation extends Component {
     render() {
 
         return (
-            <div class="container">
-                <div class="subTitle">
+            <div className="container">
+                <div className="subTitle">
                     <p>S</p>
                     <p>M</p>
                     <p>L</p>
                 </div>
-                <div class="childContainer">
+                <div className="childContainer">
 
                     {
                         this.state.essentialLoadData.map(rowData =>
-                            <div class="childContainer">
-                                <div class="estimationTitle">
+                            <div className="childContainer">
+                                <div className="estimationTitle">
                                     <h1>{rowData.name}</h1>
                                 </div>
-                                <div class="estimationcontrols">
+                                <div className="estimationcontrols">
                                     {
                                         Object.keys(rowData.options).map((op, i) =>
                                             <input checked={rowData.choosen === op ? true : false} name={rowData.name} type="radio" value={op} onChange={this.props.FindCalculation} />
