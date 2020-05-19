@@ -3,8 +3,9 @@
     /* background: #F64c72; */
     margin: 0 auto;
     text-align: right;
-    margin-top: 20px;
+    margin-top: 10px;
     cursor: pointer;
+    margin-bottom: 20px;
   }
   
   .button input[type="button"] {
