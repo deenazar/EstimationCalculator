@@ -19,7 +19,6 @@ export default class CustomComponent extends Component {
     }
 
     onChangeEvent = (e) => {
-        //console.log("Value", e.target.value);
 
         if (e.target.name == "externalEffort") {
             if (isNaN(e.target.value)) {
@@ -50,7 +49,7 @@ export default class CustomComponent extends Component {
 
     componentWillReceiveProps(nextProps) {
         // Any time props.email changes, update state.
-        console.log("props", nextProps);
+
         if (nextProps.initialState !== this.props.initialState) {
             this.setState({
                 initialState: nextProps.initialState
@@ -61,7 +60,6 @@ export default class CustomComponent extends Component {
     render() {
         return (
             <div className="container">
-
                 {
                     this.state.customOnLoadData.map(rowData =>
                         <div>
@@ -69,14 +67,10 @@ export default class CustomComponent extends Component {
                                 <div className="reportHeading">{rowData.name} </div>
                                 <div className="reportScore"> - {rowData.value} Hrs</div>
                             </div>
-
-
                         </div>
-
                     )
-
-
                 }
+
                 {
                     <div className="addReport">
                         <div className="addreportHeading"><input className="EffortNameClass" value={this.state.initialState.externalEffortName} name="externalEffortName" onChange={this.onChangeEvent} ref={this.externalEffortNameRef} type="text" placeholder="Enter the effort">

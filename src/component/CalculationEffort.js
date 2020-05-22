@@ -16,9 +16,6 @@ export default class CalculationEffortComponent extends Component {
 
     render() {
 
-        var totalEffort = 0;
-
-
         return (
             <div className="calHeading">
                 {
@@ -28,14 +25,10 @@ export default class CalculationEffortComponent extends Component {
                                 <div className="reportHeading">{rowData.name} </div>
                                 <div className="reportScore"> - {rowData.value} Hrs</div>
                             </div>
-
-
                         </div>
-
                     )
-
-
                 }
+
                 <hr className="totalHr"></hr>
                 <h1 className="totalEffort" >Total Effort: {this.state.totalEffort} Hrs </h1>
 

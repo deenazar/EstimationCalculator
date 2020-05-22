@@ -240,8 +240,6 @@ var mandatoryCopyLoadData = [
 
 var customCopyLoadData = [];
 
-
-
 var calculationLoadData = [];
 var effort = 0;
 
@@ -251,9 +249,12 @@ const initialState = {
     externalEffortError: ''
 }
 
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
+
+        // state variable declaration for DOM change elements
 
         this.state = {
             activeStep: 1,
@@ -264,20 +265,15 @@ export default class App extends React.Component {
             customLoadData: customLoadData,
             totalEffort: 0,
             initialState: initialState,
-            externalError:''
+            externalError: ''
         }
 
+        // Create Ref elements
         this.componentRef = React.createRef();
     }
 
     InitialEffortSet = () => {
-        if (this.state.activeStep === 1) {
-            this.setState({ totalEffort: 0, headerScore: 0, photoScore: 0, videoScore: 0 })
-        }
-        else if (this.state.activeStep === 2) {
-            this.setState({ addOnsEffort: 0, toaster: 0, lightbox: 0, whatever: 0 })
-        }
-        else if (this.state.activeStep === steps.length) {
+        if (this.state.activeStep === steps.length) {
             this.TotalEffortCalculation(4);
         }
     }
@@ -302,6 +298,7 @@ export default class App extends React.Component {
         let effort = 0;
         var tempObj = {};
         calculationLoadData = [];
+
         if (step == length) {
             this.state.essentialOriginalData.map((temp) => {
                 tempObj = {};
@@ -347,8 +344,6 @@ export default class App extends React.Component {
 
     EstimationCalculation = (e) => {
 
-        // calculationLoadData = [];
-
         essentialLoadData.map((data) => {
             if (e.target.name == data.name) {
                 data.choosen = e.target.value.toString();
@@ -363,8 +358,8 @@ export default class App extends React.Component {
     }
 
     AddOnsCalculation = (e) => {
-        calculationLoadData = [];
 
+        calculationLoadData = [];
 
         addOnsLoadData.map((data) =>
             data.detail.map((subdata) => {
@@ -380,6 +375,7 @@ export default class App extends React.Component {
     }
 
     MandatoryCalculation = (e) => {
+
         calculationLoadData = [];
 
         mandatoryLoadData.map((data) =>
@@ -408,20 +404,15 @@ export default class App extends React.Component {
     handleOnClickFinish = () => {
         let nextStep = 1;
         this.setState({ activeStep: nextStep, customLoadData: customCopyLoadData, essentialOriginalData: essentialCopyLoadData, addOnsOriginalData: addOnsCopyLoadData, mandatoryOriginalData: mandatoryCopyLoadData })
-        //this.setState({ activeStep: nextStep })
     }
-
-
 
     addEffort = () => {
 
-        console.log("Data", this.componentRef.current);
         let name = this.componentRef.current.externalEffortNameRef.current.value;
         let value = this.componentRef.current.externalEffortRef.current.value;
 
         if (value > 0 && name !== '') {
 
-            console.log("true", value, name);
             let tempObj = {}
             let tempArray = [];
 
@@ -434,17 +425,17 @@ export default class App extends React.Component {
             this.setState({
                 customLoadData: tempArray,
                 externalError: '',
-                //totalEffort: this.state.totalEffort + parseInt(tempObj.value),
 
                 // clear the form
-                initialState:{
+                initialState: {
                     ...this.state.initialState,
                     externalEffort: 0,
-                    externalEffortName:''
+                    externalEffortName: ''
                 }
             })
         } else {
-            this.setState({ externalError: 'Invalid value of Effort and Hours'
+            this.setState({
+                externalError: 'Invalid value of Effort and Hours'
             })
         }
     }
@@ -470,9 +461,6 @@ export default class App extends React.Component {
                                         <EffortCalculate totalEffort={this.state.totalEffort} CalculationEffortData={calculationLoadData} name={this.state.totalEffort} addOnEffort={this.state.addOnsEffort} />
                     }
                 </div>
-
-
-
 
                 <div className="button">
                     <div className="btn1">
