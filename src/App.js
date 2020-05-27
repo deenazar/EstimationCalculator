@@ -10,7 +10,7 @@ import CustomComponent from './component/Custom.js';
 
 
 // Variable declaration
-const steps = [{ title: 'Essential effort' }, { title: 'Add-Ons' }, { title: 'Mandatory' }, { title: 'Custom' }, { title: 'Show Effort' },]
+const steps = [{ title: 'Essential Effort' }, { title: 'Add-Ons' }, { title: 'Mandatory' }, { title: 'Custom' }, { title: 'Show Effort' },]
 
 var essentialLoadData = [
     {
@@ -40,6 +40,46 @@ var essentialLoadData = [
             Small: 2,
             Medium: 4,
             Large: 6
+        },
+        choosen: ''
+    },
+    {
+        name: 'Music',
+        options:
+        {
+            Small: 2,
+            Medium: 3,
+            Large: 5
+        },
+        choosen: ''
+    },
+    {
+        name: 'Tour',
+        options:
+        {
+            Small: 2,
+            Medium: 3,
+            Large: 5
+        },
+        choosen: ''
+    },
+    {
+        name: 'Hero + Carosual',
+        options:
+        {
+            Small: 4,
+            Medium: 4,
+            Large: 4
+        },
+        choosen: ''
+    },
+    {
+        name: 'Merch',
+        options:
+        {
+            Small: 2,
+            Medium: 3,
+            Large: 5
         },
         choosen: ''
     }
@@ -155,6 +195,46 @@ var essentialCopyLoadData = [
             Small: 2,
             Medium: 4,
             Large: 6
+        },
+        choosen: ''
+    },
+    {
+        name: 'Music',
+        options:
+        {
+            Small: 2,
+            Medium: 3,
+            Large: 5
+        },
+        choosen: ''
+    },
+    {
+        name: 'Tour',
+        options:
+        {
+            Small: 2,
+            Medium: 3,
+            Large: 5
+        },
+        choosen: ''
+    },
+    {
+        name: 'Hero + Carosual',
+        options:
+        {
+            Small: 4,
+            Medium: 4,
+            Large: 4
+        },
+        choosen: ''
+    },
+    {
+        name: 'Merch',
+        options:
+        {
+            Small: 2,
+            Medium: 3,
+            Large: 5
         },
         choosen: ''
     }
@@ -305,6 +385,7 @@ export default class App extends React.Component {
                 if (temp.choosen != "") {
                     tempObj.name = temp.name + " - " + temp.choosen;
                     tempObj.value = temp.options[temp.choosen];
+                    tempObj.header = "Essential"
                     calculationLoadData.push(tempObj);
                     effort = effort + temp.options[temp.choosen];
                 }
@@ -314,6 +395,7 @@ export default class App extends React.Component {
             this.state.addOnsOriginalData.map((temp) =>
                 temp.detail.map((subTemp) => {
                     if (subTemp.checked) {
+                        subTemp.header = "AddOns"
                         calculationLoadData.push(subTemp);
                         effort = effort + subTemp.value;
                     }
@@ -323,6 +405,7 @@ export default class App extends React.Component {
             this.state.mandatoryOriginalData.map((temp) =>
                 temp.detail.map((subTemp) => {
                     if (subTemp.checked) {
+                        subTemp.header = "Mandatory"
                         calculationLoadData.push(subTemp);
                         effort = effort + subTemp.value;
                     }
@@ -331,6 +414,7 @@ export default class App extends React.Component {
 
             this.state.customLoadData.map((temp) => {
                 calculationLoadData.push(temp);
+                temp.header = "Custom"
                 effort = effort + parseInt(temp.value);
             })
         }
@@ -452,7 +536,7 @@ export default class App extends React.Component {
                     showNumber={false}
                 />
 
-                <div style={{ marginTop: '40px' }}>
+                <div style={{ marginTop: '20px' }}>
                     {
                         this.state.activeStep === 1 ? <Estimation essentialLoadData={this.state.essentialOriginalData} FindCalculation={this.EstimationCalculation} /> :
                             this.state.activeStep === 2 ? <AddOns addOnsLoadData={this.state.addOnsOriginalData} FindCalculation={this.AddOnsCalculation} /> :

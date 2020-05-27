@@ -15,7 +15,6 @@ export default class MandatoryComponent extends Component {
         return (
             <div className="container">
             <div className="heading">
-                Choose Drupal/MIS add Ons:
                 </div>
                 {
                     this.state.mandatoryLoadData.map(rowData =>

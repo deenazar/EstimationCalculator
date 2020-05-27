@@ -3,7 +3,11 @@
     /* background: #F64c72; */
     margin: 0 auto;
     text-align: right;
-    margin-top: 20px;
+    margin-top: 40px;
+}
+
+body .button{
+    margin-top:40px;
 }
 
 .button input[type="button"] {
@@ -15,8 +19,9 @@
 }
 
 .heading {
-    font-size: 32px;
- 
+    font-size: 20px;
+    color:#fff;
+    margin-bottom: 20px;
     letter-spacing: 2px;
     font-weight: bolder;
     text-transform: uppercase;
@@ -58,8 +63,8 @@ div#root hr.totalHr {
 
 input[type="checkbox"] {
     margin-left: 3.5vw;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border: 0.5px solid;
     background-color: transparent;
     border-radius: 5px;

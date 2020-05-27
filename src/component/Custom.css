@@ -1,0 +1,25 @@
+input.EffortNameClass {
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.container button {
+    border-radius: 5px;
+}
+
+input.EffortValueClass {
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.addreportScore {
+    color: #fff;
+}
+
+.showReport {
+    color: #fff;
+}

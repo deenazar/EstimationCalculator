@@ -28,7 +28,7 @@ div#root hr {
   /* background: #F64c72; */
   margin: 0 auto;
   text-align: right;
-  margin-top: 20px;
+  margin-top: 40px;
   cursor: pointer;
 }
 
@@ -116,6 +116,10 @@ input[type="checkbox"] {
   to {
     transform: rotate(360deg);
   }
+}
+
+.stepper-item-outer:nth-of-type(odd) .stepper-item-inner {
+  background-color: #F64c72;
 }
 
 @media (max-width:1024px) {

@@ -27,6 +27,10 @@
     padding: 35px;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 .showReport {
   display: block;
   width: 80%;
@@ -131,4 +135,59 @@ button.btn1 {
   width: 20%;
   text-align: center;
   margin-right: 0;
+}
+
+div#root hr.totalHr {
+  width:100%;
+  margin-top: 40px;
+}
+
+.showReport.custom {
+  width:80%;
+}
+
+body .button {
+  margin-top: 20px;
+}
+
+.Essential {
+  background: #904A84;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.AddOns {
+  background: #6FBD13;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.Mandatory {
+  background: #F25767;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.Custom {
+  background: #FFA512;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.showReport {
+  padding-top: 0px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.reportHeading {
+  padding:10px 0px;
 }
