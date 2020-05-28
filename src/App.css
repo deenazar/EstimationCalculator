@@ -63,9 +63,9 @@ h1 {
   background-color: #5cdb95;
 }
 
-.stepper-item-outer:nth-of-type(odd) {
+/* .stepper-item-outer:nth-of-type(odd) {
   border-color: #5cdb95;
-}
+} */
 
 .btn1 {
   display: inline-block;
