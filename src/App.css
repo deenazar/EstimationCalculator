@@ -130,7 +130,7 @@ input[type="checkbox"] {
     width: 32vw;
   }
   .stepper-container {
-    max-width: 90%;
+    max-width: 75%;
     /* overflow: hidden; */
   }
   body .stepper-container .stepper-item .stepper-item-outer {
@@ -139,13 +139,12 @@ input[type="checkbox"] {
     border: 1px solid #C8CACB;
   }
   body .stepper-container .stepper-item .stepper-title {
-    font-size: 2.3vw!important;
+    font-size: 2vw!important;
     min-width: 26.9vw;
   }
-  
   body .stepper-item-outer:nth-of-type(odd) .stepper-item-inner.stepper-item-inner-active {
-    width: 3.18vw;
-    height: 3.18vw;
+    width: 2.58vw;
+    height: 2.58vw;
   }
   body .stepper-item-outer:nth-of-type(even) {
     width: 30%;
@@ -169,8 +168,8 @@ input[type="checkbox"] {
     font-size: 2.85vw;
   }
   body input[type="checkbox"] {
-    width: 4vw;
-    height: 4vw;
+    width: 3vw;
+    height: 3vw;
   }
   body .button {
     width: 55.4vw;
@@ -180,11 +179,22 @@ input[type="checkbox"] {
     font-size: 2.8vw;
   }
   body .heading {
-    font-size: 4.5vw;
+    font-size: 3.5vw;
     letter-spacing: 1px;
     padding-bottom: 4.1vw;
   }
   body .calHeading {
     font-size: 5.1vw;
+    padding: none;
+    padding-top: 30px;
+  }
+  .reportHeading {
+    font-size: 14px;
+  }
+  .addreportScore {
+    width: 30%;
+  }
+  .addreportHeading {
+    width: 40%;
   }
 }

@@ -23,3 +23,77 @@ input.EffortValueClass {
 .showReport {
     color: #fff;
 }
+
+@media (max-width:1024px) {
+    .reportHeading {
+        font-size: 14px;
+    }
+    .addreportScore {
+        width: 30%;
+    }
+    .addreportHeading {
+        width: 40%;
+    }
+    body .calHeading {
+        width: 90%;
+    }
+    .container button {
+        width: 85px;
+    }
+    .addbtn1 {
+        padding-left: 10px;
+    }
+    h1.totalEffort {
+        font-size: 20px;
+    }
+    .reportScore {
+        font-size: 12px;
+    }
+    div#root {
+        overflow-x: hidden;
+    }
+    .addReport {
+        width: 100%;
+    }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+    .reportScore {
+        font-size: 20px;
+    }
+    .reportHeading {
+        font-size: 20px;
+    }
+    h1.totalEffort {
+        font-size: 32px;
+    }
+    .childContainer input[type=radio] {
+        width: 20px;
+        height: 20px;
+    }
+    input[type='radio']:after {
+        width: 18px;
+        height: 18px;
+        border: 3px solid white;
+    }
+}
+
+@media (min-width:768px) and (max-width:1024px) and (orientation:landscape) {
+    .reportHeading {
+        font-size: 24px;
+    }
+    .reportScore {
+        font-size: 24px;
+    }
+    h1.totalEffort {
+        font-size: 32px;
+    }
+    .subTitle p {
+        padding-left: 5.5vw;
+    }
+    .subTitle {
+        text-align: right;
+        width: 80%;
+        margin-right: 22px;
+    }
+}
