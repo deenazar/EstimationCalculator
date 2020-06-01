@@ -528,34 +528,35 @@ export default class App extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <h1> Effort Calculator </h1><hr></hr><br />
-                <Stepper
-                    steps={steps}
-                    activeStep={this.state.activeStep}
-                    onSelect={this.handleOnClickStepper}
-                    showNumber={false}
-                />
+                <div className="titleSection"><img src="estimatorLogo.png" /> <h1 className="title"> Effort Estimator </h1></div><br />
 
-                <div style={{ marginTop: '20px' }}>
-                    {
-                        this.state.activeStep === 1 ? <Estimation essentialLoadData={this.state.essentialOriginalData} FindCalculation={this.EstimationCalculation} /> :
-                            this.state.activeStep === 2 ? <AddOns addOnsLoadData={this.state.addOnsOriginalData} FindCalculation={this.AddOnsCalculation} /> :
-                                this.state.activeStep === 3 ? <MandatoryComponent mandatoryLoadData={this.state.mandatoryOriginalData} FindCalculation={this.MandatoryCalculation} /> :
-                                    this.state.activeStep === 4 ? <CustomComponent externalError={this.state.externalError} ref={this.componentRef} initialState={this.state.initialState} customLoadData={this.state.customLoadData} addEffort={this.addEffort} /> :
-                                        <EffortCalculate totalEffort={this.state.totalEffort} CalculationEffortData={calculationLoadData} name={this.state.totalEffort} addOnEffort={this.state.addOnsEffort} />
-                    }
-                </div>
+                <div className="ParentHeader">
+                    <Stepper
+                        steps={steps}
+                        activeStep={this.state.activeStep}
+                        onSelect={this.handleOnClickStepper}
+                        showNumber={false}
+                    />
 
-                <div className="button">
-                    <div className="btn1">
-                        {this.state.activeStep === 1 ? '' : <input type="button" value="Back" onClick={this.handleOnClickBack} />}
-                    </div>
-                    <div className="btn2">
-                        <input type="button" value={this.state.activeStep === steps.length ? 'Finish' : 'Next'}
-                            onClick={this.state.activeStep === steps.length ? this.handleOnClickFinish : this.handleOnClickNext} />
+                    <div style={{ marginTop: '20px' }}>
+                        {
+                            this.state.activeStep === 1 ? <Estimation essentialLoadData={this.state.essentialOriginalData} FindCalculation={this.EstimationCalculation} /> :
+                                this.state.activeStep === 2 ? <AddOns addOnsLoadData={this.state.addOnsOriginalData} FindCalculation={this.AddOnsCalculation} /> :
+                                    this.state.activeStep === 3 ? <MandatoryComponent mandatoryLoadData={this.state.mandatoryOriginalData} FindCalculation={this.MandatoryCalculation} /> :
+                                        this.state.activeStep === 4 ? <CustomComponent externalError={this.state.externalError} ref={this.componentRef} initialState={this.state.initialState} customLoadData={this.state.customLoadData} addEffort={this.addEffort} /> :
+                                            <EffortCalculate totalEffort={this.state.totalEffort} CalculationEffortData={calculationLoadData} name={this.state.totalEffort} addOnEffort={this.state.addOnsEffort} />
+                        }
                     </div>
 
-
+                    <div className="button">
+                        <div className="btn1">
+                            {this.state.activeStep === 1 ? '' : <input type="button" value="Back" onClick={this.handleOnClickBack} />}
+                        </div>
+                        <div className="btn2">
+                            <input type="button" value={this.state.activeStep === steps.length ? 'Finish' : 'Next'}
+                                onClick={this.state.activeStep === steps.length ? this.handleOnClickFinish : this.handleOnClickNext} />
+                        </div>
+                    </div>
                 </div>
 
             </React.Fragment>

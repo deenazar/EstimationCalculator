@@ -46,7 +46,7 @@
     padding-left: 3.8vw;
     font-size: 20px;
     font-weight: bold;
-    color:#fff;
+    color:#000;
 }
 
 input[type='radio']:after {
@@ -80,7 +80,8 @@ input[type='radio']:checked:after {
 
 .estimationcontrols {
     display: inline-block;
-    width: 45%;
+    width: 40%;
+    text-align: right;
 }
 
 .childContainer input[type=radio] {
@@ -88,9 +89,30 @@ input[type='radio']:checked:after {
 }
 
 .subTitle {
+    display: inline-block;
+    width: 42%;
+    color: #000;
+    /* width: 42.5vw; */
+    /* margin-right: 16px; */
     text-align: right;
-    width: 42.5vw;
-    /* margin-right: 22px; */
+    padding-left: 20px;
+}
+
+.titleHeading {
+    color: #000;
+    width: 100%;
+    display: block;
+}
+
+.blockHeading h1 {
+    color: #000;
+    text-align: left;
+}
+
+.blockHeading {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
 }
 
 input[type="checkbox"] {
@@ -110,11 +132,19 @@ input[type="checkbox"] {
         width: 100%;
     }
     .subTitle {
-        width: 85%;
+        width: 38%;
         /* padding-left: 30px; */
     }
     .subTitle p {
         padding-left: 8vw;
+        font-size: 3.8vw;
+    }
+
+    h1.title {
+        font-size: 28px;
+    }
+    
+    .blockHeading h1 {
         font-size: 3.8vw;
     }
     .childContainer h1 {
@@ -133,15 +163,27 @@ input[type="checkbox"] {
     .subTitle p:first-child {
         padding-left: 0px;
     }
+
+    .estimationcontrols {
+        width:45%;
+    }
 }
 
 @media (min-width:768px) and (max-width:1023px) {
     .subTitle {
-        width: 85%;
+        width: 50%;
         /* padding-left: 30px; */
     }
     .subTitle p {
         padding-left: 8vw;
+        font-size: 3.8vw;
+    }
+
+    .blockHeading {
+        width: 42%;
+    }
+
+    .blockHeading h1{
         font-size: 3.8vw;
     }
     .childContainer h1 {

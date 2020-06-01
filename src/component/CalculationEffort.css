@@ -61,6 +61,7 @@ body hr.totalHr {
 
 h1.totalEffort {
   text-align: right;
+  color: #000;
   /* right: 20px; */
 }
 

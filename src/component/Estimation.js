@@ -17,11 +17,17 @@ export default class Estimation extends Component {
 
         return (
             <div className="container">
-                <div className="subTitle">
-                    <p>S</p>
-                    <p>M</p>
-                    <p>L</p>
+                <div className="titleHeading">
+                    <div className="blockHeading">
+                        <h1>Blocks</h1>
+                    </div>
+                    <div className="subTitle">
+                        <p>S</p>
+                        <p>M</p>
+                        <p>L</p>
+                    </div>
                 </div>
+
                 <div className="childContainer">
 
                     {
@@ -37,7 +43,7 @@ export default class Estimation extends Component {
                                         )
                                     }
                                 </div>
-
+                                <hr className="divided"></hr>
                             </div>
 
                         )
