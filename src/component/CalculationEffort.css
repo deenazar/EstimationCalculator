@@ -1,5 +1,5 @@
 .button {
-  width: 52.4vw;
+  width: 920px;
   /* background: #F64c72; */
   margin: 0 auto;
   text-align: right;
@@ -20,7 +20,8 @@
   font-size: 24px;
   font-weight: 500;
   letter-spacing: 2px;
-  width: 52.4vw;
+  max-width: 920px;
+  width:100%;
   margin: 0 auto;
   text-align: center;
   padding: 35px;
@@ -109,7 +110,6 @@ input.EffortValueClass {
   display: inline-block;
   width: 20%;
   text-align: right;
-  vertical-align: top;
 }
 
 button {

@@ -79,8 +79,8 @@ export default class CustomComponent extends Component {
                         </div>
                         <div className="addreportScore"> - <input className="EffortValueClass" pattern="[0-9]*" value={this.state.initialState.externalEffort} name="externalEffort" onChange={this.onChangeEvent} ref={this.externalEffortRef} type="text">
                         </input> Hrs</div>
-                        <div className="addbtn1">
-                            <button onClick={this.props.addEffort}>Add</button>
+                        <div className="button addbtn1">
+                            <input onClick={this.props.addEffort} type="button" value="Add"></input>
                         </div>
                         <div className="error">{this.props.externalError}</div>
                     </div>

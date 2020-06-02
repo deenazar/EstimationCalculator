@@ -8,7 +8,8 @@
 
 .container .childContainer {
     display: block;
-    width: 52.4vw;
+    width: 100%;
+    max-width: 920px;
 }
 
 .childContainer h1 {
@@ -26,7 +27,7 @@
 .button input[type="button"] {
     background: #F64c72;
     border: 0;
-    padding: 8px 25px;
+    padding: 12px 25px;
     font-size: 15px;
     letter-spacing: 2px;
 }
@@ -43,38 +44,39 @@
 
 .subTitle p {
     display: inline-block;
-    padding-left: 3.8vw;
+    padding-left: 60px;
     font-size: 16px;
     font-weight: bold;
-    color:#000;
+    color: #000;
     font-weight: 700;
     font-family: pt-sans, sans-serif;
 }
 
 input[type='radio']:after {
-    width: 12px;
-    height: 12px;
+    /* width: 12px;
+    height: 12px; */
     border-radius: 50px;
     position: relative;
     background-color: #d1d3d1;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 2px solid white;
+    border: 1px solid #707070;
 }
 
 input[type='radio']:checked:after {
-    width: 15px;
-    height: 15px;
+    /* width: 15px;
+    height: 15px; */
     border-radius: 50px;
     position: relative;
     background-color: #007cc3;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 2px solid white;
-        border-radius: 50%;
+    border: 1px solid #707070;
+    border-radius: 50%;
 }
+
 .estimationTitle {
     width: 55%;
     display: inline-block;
@@ -113,6 +115,7 @@ input[type='radio']:checked:after {
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 700;
+    letter-spacing: 0px;
 }
 
 .blockHeading {
@@ -138,18 +141,16 @@ input[type="checkbox"] {
         width: 100%;
     }
     .subTitle {
-        width: 38%;
+        width: 45%;
         /* padding-left: 30px; */
     }
     .subTitle p {
         padding-left: 8vw;
         font-size: 3.8vw;
     }
-
     h1.title {
         font-size: 28px;
     }
-    
     .blockHeading h1 {
         font-size: 12.16px;
         font-weight: 700;
@@ -170,9 +171,11 @@ input[type="checkbox"] {
     .subTitle p:first-child {
         padding-left: 0px;
     }
-
     .estimationcontrols {
-        width:45%;
+        width: 45%;
+    }
+    .blockHeading {
+        width: 45%;
     }
 }
 
@@ -185,12 +188,10 @@ input[type="checkbox"] {
         padding-left: 54.6px;
         font-size: 29px;
     }
-
     .blockHeading {
         width: 42%;
     }
-
-    .blockHeading h1{
+    .blockHeading h1 {
         font-size: 29px;
     }
     .childContainer h1 {
@@ -208,34 +209,27 @@ input[type="checkbox"] {
         width: 25px;
         height: 25px;
     }
-
-    
     input.EffortNameClass {
         font-size: 11.8px;
     }
-    
     .addreportScore {
         font-size: 11.8px;
     }
-    
     input.EffortValueClass {
         font-size: 11.8px;
     }
-    
     .container button {
         padding: 5px 20px;
     }
 }
 
-@media (max-width:767px) and (orientation:landscape){
+@media (max-width:767px) and (orientation:landscape) {
     .childContainer input[type=radio] {
-        margin-left:8.2vw;
+        margin-left: 8.2vw;
     }
-
     .subTitle p {
         padding-left: 57.6px;
     }
-
     .subTitle {
         padding-left: 35px;
     }

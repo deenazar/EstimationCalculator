@@ -434,7 +434,7 @@ export default class App extends React.Component {
 
         essentialLoadData.map((data) => {
             if (e.target.name == data.name) {
-                data.choosen = e.target.value.toString();
+                data.choosen = e.target.value.toString() < 10 ? "0" + e.target.value.toString() : e.target.value.toString();
             }
         }
         );
@@ -505,7 +505,7 @@ export default class App extends React.Component {
             let tempArray = [];
 
             tempObj.name = name;
-            tempObj.value = value;
+            tempObj.value = value < 10 ? "0"+value : value;
 
             tempArray = this.state.customLoadData;
             tempArray.push(tempObj);
@@ -554,7 +554,7 @@ export default class App extends React.Component {
 
                     <div className="button">
                         <div className="btn1">
-                            {this.state.activeStep === 1 ? '' : <input type="button" value="Back" onClick={this.handleOnClickBack} />}
+                            {this.state.activeStep === 1 ? '' : <input type="button" value="Previous" onClick={this.handleOnClickBack} />}
                         </div>
                         <div className="btn2">
                             <input type="button" value={this.state.activeStep === steps.length ? 'Finish' : 'Next'}
