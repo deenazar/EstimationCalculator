@@ -14,7 +14,7 @@
 }
 
 .stepper-item-outer:nth-of-type(even) {
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   opacity: 0.5;
 }
 
@@ -144,7 +144,7 @@ input[type="checkbox"] {
 }
 
 .stepper-item-outer:nth-of-type(odd) {
-  border: 0.5px solid #000;
+  /* border: 0.5px solid #000; */
 }
 
 body .childContainer h1 {
