@@ -44,9 +44,11 @@
 .subTitle p {
     display: inline-block;
     padding-left: 3.8vw;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color:#000;
+    font-weight: 700;
+    font-family: pt-sans, sans-serif;
 }
 
 input[type='radio']:after {
@@ -107,6 +109,10 @@ input[type='radio']:checked:after {
 .blockHeading h1 {
     color: #000;
     text-align: left;
+    font-family: pt-sans, sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .blockHeading {
@@ -145,7 +151,8 @@ input[type="checkbox"] {
     }
     
     .blockHeading h1 {
-        font-size: 3.8vw;
+        font-size: 12.16px;
+        font-weight: 700;
     }
     .childContainer h1 {
         font-size: 2.85vw;
@@ -171,12 +178,12 @@ input[type="checkbox"] {
 
 @media (min-width:768px) and (max-width:1023px) {
     .subTitle {
-        width: 50%;
+        width: 45%;
         /* padding-left: 30px; */
     }
     .subTitle p {
-        padding-left: 8vw;
-        font-size: 3.8vw;
+        padding-left: 54.6px;
+        font-size: 29px;
     }
 
     .blockHeading {
@@ -184,7 +191,7 @@ input[type="checkbox"] {
     }
 
     .blockHeading h1{
-        font-size: 3.8vw;
+        font-size: 29px;
     }
     .childContainer h1 {
         font-size: 2.85vw;
@@ -201,10 +208,35 @@ input[type="checkbox"] {
         width: 25px;
         height: 25px;
     }
+
+    
+    input.EffortNameClass {
+        font-size: 11.8px;
+    }
+    
+    .addreportScore {
+        font-size: 11.8px;
+    }
+    
+    input.EffortValueClass {
+        font-size: 11.8px;
+    }
+    
+    .container button {
+        padding: 5px 20px;
+    }
 }
 
 @media (max-width:767px) and (orientation:landscape){
     .childContainer input[type=radio] {
         margin-left:8.2vw;
+    }
+
+    .subTitle p {
+        padding-left: 57.6px;
+    }
+
+    .subTitle {
+        padding-left: 35px;
     }
 }

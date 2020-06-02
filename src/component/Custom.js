@@ -63,7 +63,7 @@ export default class CustomComponent extends Component {
             <div className="container">
                 {
                     this.state.customOnLoadData.map(rowData =>
-                        <div>
+                        <div className="itemRow">
                             <div className="showReport custom">
                                 <div className="reportHeading">{rowData.name} </div>
                                 <div className="reportScore"> - {rowData.value} Hrs</div>

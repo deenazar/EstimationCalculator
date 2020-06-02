@@ -8,7 +8,7 @@
 }
 
 .stepper-container {
-  max-width: 59.88vw;
+  max-width:919px;
   width: 100%;
   margin: 0 auto;
 }
@@ -31,6 +31,10 @@ div#root hr {
   text-align: right;
   margin-top: 40px;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: pt-sans, sans-serif;
+  border: 0;
 }
 
 .button input[type="button"]:first-child {
@@ -41,11 +45,13 @@ div#root hr {
   background: #D6C2B2 !important;
   border: 0;
   padding: 8px 25px;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 2px;
   margin-left: 20px;
   border-radius: 15px;
   cursor: pointer;
+  font-family: pt-sans, sans-serif;
+  font-weight: 400;
 }
 
 h1 {
@@ -54,10 +60,11 @@ h1 {
   letter-spacing: 4px;
 }
 
-.stepper-container .stepper-item .stepper-title {
+body .ParentHeader .stepper-container .stepper-item .stepper-title {
   letter-spacing: 1px;
-  font-size: 16px!important;
+  font-size: 18px;
   font-weight: 700;
+  font-family: pt-sans, sans-serif;
 }
 
 .stepper-item-inner-active {
@@ -86,9 +93,11 @@ h1.title {
   width: 70%;
   text-align: left;
   padding-left: 10px;
-  font-size: 42px;
+  font-size: 48px;
   line-height: 1;
   vertical-align: middle;
+  font-weight: 600;
+  font-family: poppins, sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -140,16 +149,19 @@ input[type="checkbox"] {
 
 body .childContainer h1 {
   columns: #000000;
-  opacity: 0.8;
+  font-family: pt-sans, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .ParentHeader {
   background: #fff;
-  width: 80%;
+  max-width: 80%;
   margin: 0 auto;
   border-radius: 25px;
   padding: 20px 0px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .titleSection {
@@ -164,6 +176,14 @@ body .childContainer h1 {
 body hr.divided {
   color: #000 !important;
   width: 100% !important;
+}
+
+.childContainer {
+  border-bottom: 1px solid #CDCDCD;
+}
+
+.childContainer:last-child {
+  border-bottom: 0px;
 }
 
 @media (max-width:1024px) {
@@ -183,7 +203,7 @@ body hr.divided {
     border: 1px solid #C8CACB;
   }
   body .stepper-container .stepper-item .stepper-title {
-    font-size: 1.8vw!important;
+    font-size: 6px !important;
     min-width: 26.9vw;
   }
   body .stepper-item-outer:nth-of-type(odd) .stepper-item-inner.stepper-item-inner-active {
@@ -209,7 +229,7 @@ body hr.divided {
     font-size: 3.3vw;
   }
   body .childContainer h1 {
-    font-size: 2.85vw;
+    font-size: 11.8px;
   }
   body input[type="checkbox"] {
     width: 3vw;
@@ -220,7 +240,7 @@ body hr.divided {
   }
   body .button input[type="button"] {
     padding: 5px 20px;
-    font-size: 2.8vw;
+    font-size: 11.6px;
   }
   body .heading {
     font-size: 3.5vw;
@@ -240,5 +260,28 @@ body hr.divided {
   }
   .addreportHeading {
     width: 40%;
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px){
+  .titleSection img {
+    width:15%;
+    height: auto;
+  }
+}
+@media (min-width:768px) and (max-width:1024px) {
+  input.EffortNameClass {
+    font-size: 11.8px;
+  }
+ 
+  input.EffortValueClass {
+    font-size: 11.8px;
+  }
+  .container button {
+    padding: 5px 20px;
+  }
+
+  body .stepper-container .stepper-item .stepper-title {
+    font-size: 12px !important;
   }
 }

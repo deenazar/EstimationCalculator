@@ -11,6 +11,8 @@ export default class CalculationEffortComponent extends Component {
             totalEffort: this.props.totalEffort,
             externalEffort: 0,
         }
+
+        console.log("Calculation", this.state.calculationEffortData);
     }
 
     render() {
@@ -20,7 +22,7 @@ export default class CalculationEffortComponent extends Component {
                 {
                     this.state.calculationEffortData.map(rowData =>
                         <div className={rowData.header == "Essential" ? "Essential" : rowData.header == "AddOns" ? "AddOns" : rowData.header == "Mandatory" ? "Mandatory" : "Custom"}>
-                            <div className="showReport">
+                            <div className={rowData.header == "Essential" ? "showReport " + "Essential" : rowData.header == "AddOns" ? "showReport " + "AddOns" : rowData.header == "Mandatory" ? "showReport " + "Mandatory" : "showReport " + "Custom"}>
                                 <div className="reportHeading">{rowData.name} </div>
                                 <div className="reportScore"> - {rowData.value} Hrs</div>
                             </div>

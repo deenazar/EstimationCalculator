@@ -43,7 +43,7 @@ export default class Estimation extends Component {
                                         )
                                     }
                                 </div>
-                                <hr className="divided"></hr>
+                                {/* <hr className="divided"></hr> */}
                             </div>
 
                         )

@@ -387,7 +387,7 @@ export default class App extends React.Component {
                     tempObj.value = temp.options[temp.choosen];
                     tempObj.header = "Essential"
                     calculationLoadData.push(tempObj);
-                    effort = effort + temp.options[temp.choosen];
+                    effort = effort + parseInt(temp.options[temp.choosen]);
                 }
             }
             )
@@ -396,8 +396,9 @@ export default class App extends React.Component {
                 temp.detail.map((subTemp) => {
                     if (subTemp.checked) {
                         subTemp.header = "AddOns"
+                        subTemp.value = subTemp.value;
                         calculationLoadData.push(subTemp);
-                        effort = effort + subTemp.value;
+                        effort = effort + parseInt(subTemp.value);
                     }
                 })
             )
@@ -406,8 +407,9 @@ export default class App extends React.Component {
                 temp.detail.map((subTemp) => {
                     if (subTemp.checked) {
                         subTemp.header = "Mandatory"
+                        subTemp.value = subTemp.value;
                         calculationLoadData.push(subTemp);
-                        effort = effort + subTemp.value;
+                        effort = effort + parseInt(subTemp.value);
                     }
                 })
             )
@@ -415,6 +417,8 @@ export default class App extends React.Component {
             this.state.customLoadData.map((temp) => {
                 calculationLoadData.push(temp);
                 temp.header = "Custom"
+                temp.value = temp.value;
+
                 effort = effort + parseInt(temp.value);
             })
         }
