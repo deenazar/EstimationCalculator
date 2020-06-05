@@ -532,7 +532,7 @@ export default class App extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="titleSection"><img src="estimatorLogo.png" /> <h1 className="title"> Effort Estimator </h1></div><br />
+                <div className="titleSection"><img src="estimatorLogo.png" /> <h1 className="title"> Effort Estimator </h1></div>
 
                 <div className="ParentHeader">
                     <Stepper

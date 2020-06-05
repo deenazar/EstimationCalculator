@@ -170,6 +170,7 @@ body .childContainer h1 {
 .titleSection {
   width: 80%;
   margin: 0 auto;
+  margin-top: 25px;
 }
 
 .titleSection img {
@@ -259,10 +260,10 @@ body hr.divided {
     font-size: 14px;
   }
   .addreportScore {
-    width: 30%;
+    width: 38%;
   }
   .addreportHeading {
-    width: 40%;
+    width: 35%;
   }
 }
 
@@ -288,3 +289,18 @@ body hr.divided {
     font-size: 12px !important;
   }
 }
+
+@media (max-width:767px) and (orientation:landscape){
+  .blockHeading h1 {
+    font-size: 27.9px;
+  }
+
+  .subTitle p {
+    font-size: 27.9px;
+  }
+
+  body .stepper-container .stepper-item .stepper-title {
+    font-size: 8px !important;
+  }
+}
+

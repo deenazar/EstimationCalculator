@@ -27,9 +27,10 @@
 .button input[type="button"] {
     background: #F64c72;
     border: 0;
-    padding: 12px 25px;
+    padding: 24px 60px;
     font-size: 15px;
     letter-spacing: 2px;
+    padding-top: 2px;
 }
 
 .childContainer input[type=radio] {
@@ -58,7 +59,7 @@ input[type='radio']:after {
     border-radius: 50px;
     position: relative;
     background-color: #d1d3d1;
-    content: '';
+    /* content: ''; */
     display: inline-block;
     visibility: visible;
     border: 1px solid #707070;
@@ -70,7 +71,7 @@ input[type='radio']:checked:after {
     border-radius: 50px;
     position: relative;
     background-color: #007cc3;
-    content: '';
+    /* content: ''; */
     display: inline-block;
     visibility: visible;
     border: 1px solid #707070;
@@ -223,14 +224,27 @@ input[type="checkbox"] {
     }
 }
 
+@media (min-width:768px) and (max-width:1024px){
+    body .childContainer h1 {
+        font-size: 16px;
+    }
+}
+
 @media (max-width:767px) and (orientation:landscape) {
     .childContainer input[type=radio] {
         margin-left: 8.2vw;
     }
     .subTitle p {
-        padding-left: 57.6px;
+        padding-left: 60px;
+        font-size: 20px;
     }
+
+    .blockHeading h1 {
+        font-size: 20px;
+    }
+
     .subTitle {
         padding-left: 35px;
     }
 }
+

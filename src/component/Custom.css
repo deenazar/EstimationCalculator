@@ -21,7 +21,7 @@ input.EffortValueClass {
 }
 
 .addreportScore {
-    color: #fff;
+    color: #000;
 }
 
 /* .showReport {
@@ -33,10 +33,10 @@ input.EffortValueClass {
         font-size: 14px;
     }
     .addreportScore {
-        width: 30%;
+        width: 38%;
     }
     .addreportHeading {
-        width: 40%;
+        width: 35%;
     }
     body .calHeading {
         width: 90%;
@@ -81,6 +81,10 @@ input.EffortValueClass {
         /* width: 18px;
         height: 18px; */
         border: 3px solid white;
+    }
+
+    .subTitle {
+        width: 46% !important;
     }
 }
 

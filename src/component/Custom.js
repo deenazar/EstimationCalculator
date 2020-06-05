@@ -74,7 +74,7 @@ export default class CustomComponent extends Component {
 
                 {
                     <div className="addReport">
-                        <div className="addreportHeading"><input className="EffortNameClass" value={this.state.initialState.externalEffortName} name="externalEffortName" onChange={this.onChangeEvent} ref={this.externalEffortNameRef} type="text" placeholder="Enter the effort">
+                        <div className="addreportHeading"><input className="EffortNameClass" value={this.state.initialState.externalEffortName} name="externalEffortName" onChange={this.onChangeEvent} ref={this.externalEffortNameRef} type="text" placeholder="Effort">
                         </input>
                         </div>
                         <div className="addreportScore"> - <input className="EffortValueClass" pattern="[0-9]*" value={this.state.initialState.externalEffort} name="externalEffort" onChange={this.onChangeEvent} ref={this.externalEffortRef} type="text">
