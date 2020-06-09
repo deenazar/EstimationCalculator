@@ -32,7 +32,7 @@ export default class Estimation extends Component {
 
                     {
                         this.state.essentialLoadData.map(rowData =>
-                            <div className="childContainer">
+                            <div className="subchildContainer">
                                 <div className="estimationTitle">
                                     <h1>{rowData.name}</h1>
                                 </div>

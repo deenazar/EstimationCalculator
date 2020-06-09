@@ -1,5 +1,6 @@
 .button {
-  width: 920px;
+  width: 100%;
+  max-width: 80%;
   /* background: #F64c72; */
   margin: 0 auto;
   text-align: right;
@@ -163,7 +164,7 @@ div#root hr.totalHr {
 }
 
 body .button {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .Essential {

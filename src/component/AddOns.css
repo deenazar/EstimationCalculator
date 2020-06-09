@@ -44,7 +44,8 @@ body .button{
 
 .container {
     display: block;
-    width: 920px;
+    width: 100%;
+    max-width: 80%;
     margin: 0 auto;
 }
 div#root hr.totalHr {

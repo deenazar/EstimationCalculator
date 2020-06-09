@@ -84,7 +84,7 @@ input.EffortValueClass {
     }
 
     .subTitle {
-        width: 46% !important;
+        width: 50% !important;
     }
 }
 
@@ -99,12 +99,12 @@ input.EffortValueClass {
         font-size: 32px;
     }
     .subTitle p {
-        padding-left: 61.1px;
+        padding-left: 54px;
     }
     .subTitle {
         text-align: right;
-        width: 41%;
-        margin-right: 22px;
+        width: 50%;
+        /* margin-right: 22px; */
     }
     .blockHeading h1 {
         font-size: 16px;
