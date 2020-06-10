@@ -28,10 +28,9 @@
 .button input[type="button"] {
     background: #F64c72;
     border: 0;
-    padding: 24px 60px;
+    padding: 18px 60px;
     font-size: 15px;
     letter-spacing: 2px;
-    padding-top: 2px;
 }
 
 .childContainer input[type=radio] {
@@ -180,7 +179,8 @@ input[type="checkbox"] {
         width: 50%;
     }
     body .container {
-        width: 90%;
+        width: 100%;
+        max-width: 90%;
     }
     body input[type="checkbox"] {
         width: 15px;
